@@ -1,20 +1,9 @@
-# Horus Collectables — V2
+# Horus Collectables — one-screen site
 
-A bold mobile-first Railway-ready website. No checkout or database required.
+Simple Node.js static website. `npm start` launches it on the Railway-provided PORT.
 
-## Deploy to existing Railway project
+## GitHub / Railway
 
-1. Open the GitHub repository connected to your Railway service.
-2. Open the folder currently containing `package.json`, `server.js`, and `public` (your Railway Root Directory).
-3. Replace those files and the `public` folder contents with the corresponding files from this ZIP.
-4. Commit the changes. Railway should redeploy automatically.
-5. Keep your existing Railway Root Directory setting unchanged.
-6. Hard refresh your browser (Ctrl+Shift+R) after deployment.
+Upload the contents of this ZIP to the ROOT of the GitHub repository (where `server.js`, `package.json` and `public/` live), replacing matching files. Keep Railway Root Directory set to `/`.
 
-## Local testing
-
-`npm start` then open http://localhost:3000
-
-## Brand spelling
-
-Always use COLLECTABLES, never COLLECTIBLES.
+Links can be edited in `public/index.html`. Styling is in `public/style.css`.
