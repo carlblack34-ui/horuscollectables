@@ -1,14 +1,9 @@
-# Horus Collectables — V3
-Clean, premium, friendly website. Australian spelling **Collectables** throughout. Uses your actual Horus logo and sandstone banner. No checkout, no fake product listings.
+# Horus Collectables — one-screen site
 
-## Update existing Railway deployment
-1. Unzip this package.
-2. Open the folder containing `package.json`, `server.js` and `public` in your connected GitHub repository.
-3. Upload/replace `package.json`, `server.js`, and everything inside `public` with the corresponding V3 files. Do not upload the V3 folder as an additional nested folder.
-4. Commit changes. Railway should automatically redeploy.
-5. **Keep your existing Root Directory setting** (`/horus-collectables-v1/horus-collectables`) unless you change the repository structure.
-6. Open your Railway URL and hard refresh (Ctrl+Shift+R).
+Simple Node.js static website. `npm start` launches it on the Railway-provided PORT.
 
-To test locally: `npm start` then visit `http://localhost:3000`.
+## GitHub / Railway
 
-Links: Whatnot, Instagram, YouTube.
+Upload the contents of this ZIP to the ROOT of the GitHub repository (where `server.js`, `package.json` and `public/` live), replacing matching files. Keep Railway Root Directory set to `/`.
+
+Links can be edited in `public/index.html`. Styling is in `public/style.css`.
