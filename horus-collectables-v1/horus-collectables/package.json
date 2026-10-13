@@ -1,8 +1,0 @@
-{
-  "name": "horus-collectables",
-  "version": "1.0.0",
-  "private": true,
-  "description": "Horus Collectables website",
-  "scripts": {"start": "node server.js"},
-  "engines": {"node": ">=18"}
-}
