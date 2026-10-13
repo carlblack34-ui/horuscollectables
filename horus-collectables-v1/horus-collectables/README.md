@@ -1,13 +1,20 @@
-# Horus Collectables — Redesign
+# Horus Collectables — V2
 
-Railway-ready Node.js website.
+A bold mobile-first Railway-ready website. No checkout or database required.
 
-## Deploy with existing Railway project
+## Deploy to existing Railway project
 
-1. Open your existing GitHub repository.
-2. Navigate to the folder containing `package.json` and `server.js` (currently `horus-collectables-v1/horus-collectables`).
-3. Replace `public/index.html`, `public/style.css`, and `public/script.js`; add `public/horus-banner.png` and `public/horus-emblem.png`. You can also replace all project files with the contents of this ZIP.
-4. Commit changes. Railway should redeploy automatically.
-5. Keep the Railway Root Directory pointing to the folder that contains `package.json`.
+1. Open the GitHub repository connected to your Railway service.
+2. Open the folder currently containing `package.json`, `server.js`, and `public` (your Railway Root Directory).
+3. Replace those files and the `public` folder contents with the corresponding files from this ZIP.
+4. Commit the changes. Railway should redeploy automatically.
+5. Keep your existing Railway Root Directory setting unchanged.
+6. Hard refresh your browser (Ctrl+Shift+R) after deployment.
 
-Social URLs are configured in `public/index.html`. No payments or database are included.
+## Local testing
+
+`npm start` then open http://localhost:3000
+
+## Brand spelling
+
+Always use COLLECTABLES, never COLLECTIBLES.
