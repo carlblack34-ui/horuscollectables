@@ -1,9 +1,1 @@
-# Horus Collectables — one-screen site
-
-Simple Node.js static website. `npm start` launches it on the Railway-provided PORT.
-
-## GitHub / Railway
-
-Upload the contents of this ZIP to the ROOT of the GitHub repository (where `server.js`, `package.json` and `public/` live), replacing matching files. Keep Railway Root Directory set to `/`.
-
-Links can be edited in `public/index.html`. Styling is in `public/style.css`.
+Upload the CONTENTS of this folder to the ROOT of the GitHub repository, replacing package.json, server.js and public/index.html. Railway Root Directory: /. No separate CSS required.
