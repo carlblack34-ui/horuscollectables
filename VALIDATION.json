@@ -1,0 +1,11 @@
+{
+  "tests": "9 tests passed (SQLite); app wizard JavaScript interaction checks passed",
+  "original_row_counts": {
+    "stock": 1,
+    "sales": 1
+  },
+  "original_database_sha256": "c64cfc792b922943f8ae38e3f7836443f7aab09367aa2012c9a05e6ad992c04a",
+  "working_database_matches_original": true,
+  "postgresql_and_railway": "Configured; live verification pending",
+  "spreadsheet": "Not supplied in retrieved attachments"
+}
