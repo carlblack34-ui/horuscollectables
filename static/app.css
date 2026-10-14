@@ -2,3 +2,13 @@
 .picker-fallback{display:block}.builder-enhanced .picker-fallback{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden;pointer-events:none}.extra-costs{border:1px solid #e4e8f1;border-radius:13px;margin:18px 0}.extra-costs summary{border:0;color:#7562d3;font-size:12px;padding:16px}.extra-costs .grid{padding:18px}.game-chip[data-game="Pokémon"]::before{background:#fff0bd;color:#be8e14}.game-chip[data-game="One Piece"]::before{background:#ffe1de;color:#d05a4e}.game-chip[data-game="Magic: The Gathering"]::before{background:#ffe9d9;color:#b9783e}.game-chip[data-game="Disney Lorcana"]::before{background:#e8ddff;color:#8a5dcc}.game-chip[aria-pressed=true]::before{background:#7160e8;color:#fff}
 .user-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}.user-card{margin:0}.user-card h2{display:flex;align-items:center;gap:12px}.user-role{display:flex;gap:12px;align-items:center;margin:20px 0}.user-role label{flex:1}.user-role select{margin-bottom:0}.reset-form{padding:18px}.sidebar nav{max-height:65vh;overflow:auto}@media(max-width:760px){.user-grid{grid-template-columns:1fr}.sidebar nav{display:flex;flex-direction:row;overflow-x:auto;max-height:none}.sidebar nav a{min-width:62px;flex:1}}
 .app-header-actions{display:flex;align-items:center;gap:14px}.account-menu{position:relative}.account-menu summary{padding:0;border:0;list-style:none}.account-menu summary::-webkit-details-marker{display:none}.account-menu-panel{position:absolute;right:0;top:48px;width:210px;background:#fff;border:1px solid #e5e9f1;box-shadow:0 10px 30px #141b2b20;border-radius:14px;padding:16px;z-index:30}.account-menu-panel p{margin:0 0 8px;font-size:12px;color:#8a96ab}.account-menu-panel a{display:block;font-size:13px;padding:9px 0}.account-menu-panel button{width:100%;margin-top:10px}
+@media (min-width: 761px) {
+  .sidebar nav {
+    flex: 0 1 auto !important;
+    min-height: 0;
+  }
+
+  .sidebar nav a {
+    flex-shrink: 0;
+  }
+}
