@@ -1,5 +1,5 @@
 {
-  "tests": "9 tests passed (SQLite); app wizard JavaScript interaction checks passed",
+  "tests": "36 tests passed (SQLite); app wizard JavaScript interaction checks passed",
   "original_row_counts": {
     "stock": 1,
     "sales": 1

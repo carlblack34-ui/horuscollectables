@@ -119,7 +119,7 @@ class PortalTests(unittest.TestCase):
         self.stock()
         inventory=self.client.get('/stock').get_data(as_text=True)
         self.assertIn('stock-card',inventory)
-        self.assertIn('/sales/add?stock_id=1',inventory)
+        self.assertIn('/sales/add?product_id=1',inventory)
         self.assertIn('sidebar',inventory)
         sale=self.client.get('/sales/add?stock_id=1').get_data(as_text=True)
         self.assertIn('value="1" selected',sale)

@@ -11,7 +11,7 @@ def transfer(source, target):
     # Upgrade a COPY first; keep the original backup untouched.
     migrate(source)
     migrate(target)
-    tables=['stock','sales','adjustments','users','audit']
+    tables=['products','stock','sales','adjustments','stock_movements','price_history','users','audit']
     counts={}
     with closing(sqlite3.connect(source)) as src, Database(target) as dst:
         src.row_factory=sqlite3.Row

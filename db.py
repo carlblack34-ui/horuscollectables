@@ -84,7 +84,15 @@ def migrate(url=None):
           notes TEXT, created_at TEXT NOT NULL, voided INTEGER NOT NULL DEFAULT 0)''')
         d.execute('''CREATE TABLE IF NOT EXISTS users (username TEXT PRIMARY KEY, password_hash TEXT NOT NULL,
           failures INTEGER NOT NULL DEFAULT 0, locked_until NUMERIC NOT NULL DEFAULT 0)''')
+        add('users','role',"TEXT NOT NULL DEFAULT 'staff'")
+        add('users','disabled','INTEGER NOT NULL DEFAULT 0')
+        add('users','auth_version','INTEGER NOT NULL DEFAULT 0')
+        add('users','must_change_password','INTEGER NOT NULL DEFAULT 0')
+        add('users','created_at',"TEXT NOT NULL DEFAULT ''")
         d.execute(f'''CREATE TABLE IF NOT EXISTS audit (id {pk}, username TEXT NOT NULL,
           action TEXT NOT NULL, details TEXT NOT NULL, created_at TEXT NOT NULL)''')
         d.execute('CREATE TABLE IF NOT EXISTS schema_version (version INTEGER PRIMARY KEY)')
         d.execute('INSERT INTO schema_version(version) VALUES (1) ON CONFLICT DO NOTHING')
+        from inventory_service import migrate_products
+        migrate_products(d,add,pk)
+        d.execute('INSERT INTO schema_version(version) VALUES (6) ON CONFLICT DO NOTHING')
