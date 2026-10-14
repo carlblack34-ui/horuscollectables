@@ -35,6 +35,18 @@ def create_app(config=None):
     if config: app.config.update(config)
     database = lambda: Database(app.config['DATABASE_URL'])
     migrate(app.config['DATABASE_URL'])
+    # One-time owner promotion requested for this Horus installation.
+    # Never creates an account, changes a password, or re-enables disabled users.
+    with database() as d:
+        lock_accounts(d)
+        d.execute('CREATE TABLE IF NOT EXISTS app_settings (key TEXT PRIMARY KEY,value TEXT NOT NULL)')
+        done=d.execute('SELECT value FROM app_settings WHERE key=?',('owner_admin_bootstrap_carl_v1',)).fetchone()
+        owner=d.execute('SELECT role,disabled FROM users WHERE username=?',('carl',)).fetchone()
+        if not done and owner and not owner['disabled']:
+            if owner['role']!='admin':
+                d.execute("UPDATE users SET role='admin',auth_version=auth_version+1 WHERE username=?",('carl',))
+                d.execute('INSERT INTO audit(username,action,details,created_at) VALUES (?,?,?,?)',('deployment','owner admin enabled','carl',NOW()))
+            d.execute('INSERT INTO app_settings(key,value) VALUES (?,?)',('owner_admin_bootstrap_carl_v1','complete'))
     app.jinja_env.filters['money'] = lambda v: f'${Decimal(str(v or 0)):,.2f}'
 
     def audit(d, action, details):
